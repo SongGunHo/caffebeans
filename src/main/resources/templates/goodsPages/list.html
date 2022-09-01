@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>상품목록</h2>
+    <tr>
+        <th>판매가</th><br>
+    </tr>
+    <tr th:each="j:${all}">
+        <td th:text="${j.id}">
+        <td><a th:href="@{|/goods/detail/${j.id}|}" th:text="${j.goodsPrice}"></a></td>
+    </tr>
+</body>
+</html>

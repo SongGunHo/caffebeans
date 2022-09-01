@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>목록</h2>
+    <table>
+    <tr>
+        <th>번호</th>
+        <th>이메일</th>
+        <th>비번</th>
+        <th>이름</th>
+        <th>전화번호</th>
+    </tr>
+    <tr th:each="a:${all}">
+        <td th:text="${a.id}"></td>
+        <td><a href="@{|/member/detail/a.id}" th:text="${a.memberEmail}"></a></td>
+        <td th:text="${a.memberPassword}"></td>
+        <td th:text="${a.memberName}"></td>
+        <td th:text="${a.memberAge}"></td>
+        <td th:text="${a.memberPhone}"></td>
+    </tr>
+    </table>
+
+
+</body>
+<script th:inline="javascript">
+    // const memberDelete =()=>{
+    //     const id = [[${session.login.id}]];
+    //     location.href="/member/delete"+id;
+    // }
+    // const memberUpdate =()=>{
+    //     const id = [[${session.login.id}]];
+    //     location.href="/member/update-form?id"+id;
+    // }
+</script>
+</html>

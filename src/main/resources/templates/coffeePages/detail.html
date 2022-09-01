@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    body{font-family: 'Courier New', Courier, monospace,dottum;}
+    a:link, a:visited, a:active {color:#5A5A5A;text-decoration:none;}
+    a:hover  { color:#054a85; text-decoration:underline; }
+    img {border:0px;max-width:650px;}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    var zoomx = 100;
+    $(document).ready(function() {
+        $(".gnb").hover(
+            function() {
+                $(".snb").stop().slideDown(400);
+            },
+            function() {
+                $(".snb").stop().slideUp(600);
+            }
+        );
+
+        $(".snb").hover(
+            function() {
+                $(".snb").stop().slideDown(400);
+            },
+            function() {
+                $(".snb").stop().slideUp(600);
+            }
+        );
+
+        $(".tabBtn").hover(
+            function() {
+
+                $(this).children(".icon_normal").css("display","none");
+                $(this).children(".icon_over").css("display","block");
+            },
+            function() {
+                $(this).children(".icon_over").css("display","none");
+                $(this).children(".basic").css("display","block");
+            }
+        );
+
+        $(".tabBtn").click(
+            function() {
+
+                $("."+$(this).attr("tarx")).children(".icon_normal").addClass("basic");
+                $("."+$(this).attr("tarx")).children(".icon_over").removeClass("basic");
+                $(this).children(".icon_over").addClass("basic");
+                $(this).children(".icon_normal").removeClass("basic");
+
+                $("."+$(this).attr("tarx")).children(".icon_over").css("display","none");
+                $("."+$(this).attr("tarx")).children(".icon_normal").css("display","none");
+                $("."+$(this).attr("tarx")).children(".basic").css("display","block");
+
+
+                $("."+$(this).attr("tarc")).css("display","none");
+                $("#"+$(this).attr("tar")).css("display","block");
+
+                $("#"+$(this).attr("tarmc")).attr("href", $(this).attr("tarm"));
+
+            }
+        );
+
+//class="tabBtn tabBtngroupA" tar="lastA_1" tarc="lastA_1" tarx="tabBtngroupA"
+    });
+    function body_zoomin() {
+        zoomx = zoomx + 10;
+        $("body").css("zoom",zoomx + "%");
+    }
+    function body_zoomout() {
+        zoomx = zoomx - 10;
+        $("body").css("zoom",zoomx + "%");
+    }
+    function body_zoomdef() {
+        zoomx = 100;
+        $("body").css("zoom",zoomx + "%");
+    }
+    function newWin(url,w,h) {
+        window.open
+        (url,'new_win','width='+w+',height='+h+',toolbars=no,menubars=no,scrollbars=auto');
+    }
+</script>
+
+
+<!--<body style="margin:0;padding:0; font-size:12px; color:#656565;position:relative;zoom: 1; ">-->
+
+<!--&lt;!&ndash;top&ndash;&gt;-->
+<!--<div style="float:left; width:100%; height:95px; background:img('') repeat-x bottom; position:relative;"> -->
+    <div class="gnb" style="width:900px; height:96px; margin:0 auto;">
+        <h1 style="float:left; margin:33px 0 0; ">
+            <a href="index.php">
+                <image src="원두를 가는사람.jpg">
+                </image>
+            </a>
+        </h1>
+        <ul style="float:right; margin:57px 0 0; padding:0; list-style:none;">
+            <a href="">로그인</a>
+            <a href="">회원가입</a>
+
+        </ul>
+    </div>
+    <div class="snb" style="display:none;width:100%; height:178px; border-bottom:1px solid #cfcfcf; background:#fff;
+  position:relative;">
+<!--        <div style="width:900px; height:178px; margin:0 auto; background:url('navi_bg.jpg') 10px 0 no-repeat" >-->
+<!--            <ul style="float:left; width:640px; height:158opx; margin:20px 0 0 268px; padding:0; list-style:none; color:#5a5a5a; letter-spacing:-0.07em; text-align:right;">-->
+                <li style="float:left; width:105px; height:178px; margih-right:2px;">
+                    <ul style="width:105px; margin:0; padding:0; list-style:none; ">
+                        <li style="margin:0 0 15px;">원두</a></li>
+                        <li style="margin:0 0 15px;"><a href="">케냐AA</a></li>
+                        <li style="margin:0 0 15px;"><a href="">과테말라 안티구아</a></li>
+                    </ul>
+                </li>
+                </li>
+                <li style="float:left; width:105px; height:178px;margih-right:2px;">
+                    <ul style="width:105px; margin:0; padding:0; list-style:none; ">
+                        <li style="margin:0 0 15px;">커피용품</a></li>
+                        <li style="margin:0 0 15px;"><a href="">�޴�5-2</a></li>
+                        <li style="margin:0 0 15px;"><a href="">�޴�5-3</a></li>
+                    </ul>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="vieport" content="width=device-width, initial-scale=1.0">
+    <title>케냐AA</title>
+
+</head>
+<body>
+<main id="order_wrap">
+    <div class="left">
+        <img src="케냐2.jpg" alt="">
+    </div>
+    <div class="right">
+        <div class="top">
+            <h1>케냐AA</h1>
+            <p>현지에서 직접 재배한 케냐AA 원두</p>
+            <dl>
+                <dt>판매가격</dt>
+                <dd class="price">3,000</dd>
+                <dt>원산지</dt>
+                <dd>대한민국</dd>
+            </dl>
+            <div class="number">
+                <p class="order_name">케냐AA</p>
+                <div class="order_number">
+                    <span class="num">수량</span>
+                    <input type="number" name="num" id="num">
+                    <span class="number_price">3,000원</span>
+                </div>
+            </div>
+            <div class="total_price">
+                <p>총 상품 금액</p>
+                <p class="result_price">3,000원</p>
+            </div>
+        </div>
+        <div class="bottom"></div>
+        <button type="button" id="order_btn">주문하기</button>
+        <button type="button" id="cart_btn">장바구니</button>
+        <button type="button" id="like_btn">찜하기</button>
+    </div>
+    </div>
+</main>
+</body>
+</html>
+<style>
+
+    #order_wrap{
+        width: 1000px; margin:0 auto;
+        display: flex; flex-flow: row nowrap;
+        justify-content: space-around;
+        border-bottom: 0.1px solid #222;
+        text-underline-position:under;
+
+    }
+    .order_wrap .left {
+        width: 500px;
+    }
+    #order_wrap .left img {width: 70%;}
+    #order_wrap .right {
+        width: calc(100% - 550px);
+
+    }
+    #order_wrap .right .top h1 {
+        font-size:20px; padding:20px 0;
+        border-bottom: 1px solid #222;
+    }
+
+    #order-wrap .right .top > p:nth-child(2){
+        color: #aaa; margin-bottom:10px; padding-bottom:10px;
+        border-bottom: 1000px solid #222;
+    }
+    #order_wrap .right .top dl{
+        display: flex; flex-flow: row wrap;
+        border-bottom: 1px solid #222;
+    }
+    #order_wrap .right .top dl dt {width: 50%;}
+
+    #order_wrap .right .top dl dt, #order_wrap .right .top dl dd {padding:10px 0;}
+    #order_wrap .right .top dl dd.price {font-weight: 700;}
+    #order_wrap .right.top .number{
+        display: flex; flex-flow: row nowrap;
+        justify-content: space-between;
+        text-align: center; padding: 10px 0; margin: 10px 0;
+        border-bottom: 1px solid #222;
+        border-top: 1px solid #ddd;
+    }
+    #order_wrap .number{
+        padding: 1.5%;
+        border-bottom: 1px solid #222;
+    }
+    #order_wrap .right .top .number .order_name {
+
+    }
+    #order_wrap .right .top .number .order_name {
+
+    }
+    #order_wrap .right .top .number .order_number input [name=num]{
+        background: #fff; width: 50px; padding: 5px;
+        border: 1px solid #222;
+    }
+    #order_wrap .right .top .number .order_number .number_price{}
+    #order_wrap .right .top .total_price{
+        display: flex; flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    #order_wrap .right .top .total_price p {}
+    #order_wrap .right .top .total_price p:nth-child(1) {}
+    #order_wrap .right .top .total_price .result_price {color: #cc0202;}
+    #order_wrap .right .bottom{
+
+        padding: 0%;
+    }
+    #order_wrap .right .bottom button {
+        padding:15px 0;
+    }
+    #order_wrap .right .bottom #order_btn {
+        width: 150px; background: #cc0202; color: #eee;
+    }
+    #order_wrap .right .bottom #cart_btn{
+        width: 120px; background: #a9a9a9;
+    }
+    #order_wrap .right .bottom #like_btn{
+        width: 100px; background: #ddd;
+    }
+</style>c
+<div class="picture">
+    <img class="coffee2" src="1660614493241.jpg"></image>
+</div>
+<style>
+    .picture{
+        padding: 1.5%;
+        text-align: center;
+
+    }
+</style>
+<!--<boby>-->
+  <h2>detail.html</h2>
+    <tr>
+        <th>상품가격</th><br>
+        <th>구매혜택</th><br>
+        <th>제조사</th><br>
+        <th>용량</th><br>
+        <th>옵션</th><br>
+    </tr>
+    <tr>
+        <td th:text="${byId.id}" hidden></td>
+        <td><a th:href="@{|/coffee/update-form/byId.id|}" th:text="${byId.coffeePrice}"></a></td>
+        <td th:text="${byId.coffeeBenefits}"></td>
+        <td th:text="${byId.coffeeCompany}"></td>
+        <td th:text="${byId.coffeeVolume}"></td>
+        <td th:text="${byId.coffeeOption}"></td>
+        <td><img th:src="@{|/upload/${byId.coffeeFileName}|}" width="100" height="100" alt=""><br>
+        </td>
+    </tr>
+
+        <input type="text" id="reset" name="select" onblur="count()">
+        <select id="reset1" name="select" onchange="here()">
+            <option value="선택">선택</option>
+            <option value="200g">200g</option>
+            <option value="400g">400g</option>
+            <option value="1kg">1Kg</option>
+        </select><br>
+        <input type="text" id="md" name="der" onblur="sp()">
+        <select id="md1" name="yb"  onchange="menu()">
+            <option value="추가옵션">추가옵션</option>
+            <option value="홀빈">홀빈</option>
+            <option value="프랜치프랜스 분쇄">프랜치프렌스 분쇄</option>
+            <option value="커피메이커">커피메이커 분쇄</option>
+            <option value="더치용 분쇄">더치용 분쇄</option>
+        </select><br>
+        <div>
+            <input class=width="30Px" type="text" id="count" value="10">
+        <button onclick="red()">+</button>
+        <button onclick="result()">-</button>
+        </div>  
+        <div class="button_set">
+            <a href="btn-cart">장바구니</a>
+            <a href="btn-buy">결제</a>
+        </div>
+</body>
+<script>
+    function form(){
+        // memberEmail: '${member.memberEmail}',
+        // bookId : '${goodsInfo.bookId}',
+        //     bookCount: ''
+    }
+    function red (){
+        let file = document.getElementById("count").value;
+        file++;
+        document.getElementById("count").value=file;
+    }
+    function result(){
+        let file = document.getElementById("count").value;
+        file--;
+        document.getElementById("count").value=file;
+    }
+    function here(){
+        const ui=document.getElementById("reset");
+        const iu= document.getElementById("reset1").value;
+        ui.value= iu;
+    }
+    function menu(){
+        const ji= document.getElementById("md");
+        const ij=document.getElementById("md1").value;
+        ji.value=ij;
+    }
+</script>
+</html>

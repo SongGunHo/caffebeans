@@ -1,0 +1,357 @@
+<style>
+    /*body {*/
+    /*    min-height: 100vh;*/
+    /*}*/
+
+    /*.input-form {*/
+    /*    max-width: 680px;*/
+
+    /*    margin-top: 80px;*/
+    /*    padding: 32px;*/
+
+    /*    background: #fff;*/
+    /*    -webkit-border-radius: 10px;*/
+    /*    -moz-border-radius: 10px;*/
+    /*    border-radius: 10px;*/
+    /*    -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);*/
+    /*    -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);*/
+    /*    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)*/
+
+    /*}*/
+    /** {*/
+    /*    margin: 0px;*/
+    /*    padding: 0px;*/
+    /*    text-decoration: none;*/
+    /*    font-family:sans-serif;*/
+
+    /*}*/
+
+    /*body {*/
+    /*    background-image: url(/15-43-35.jpg);*/
+    /*    background-size: cover;*/
+    /*}*/
+
+    /*.joinForm {*/
+    /*    position:absolute;*/
+    /*    width:400px;*/
+    /*    height:800px;*/
+    /*    padding: 30px, 20px;*/
+    /*    background-color:#FFFFFF;*/
+    /*    text-align:center;*/
+    /*    top:40%;*/
+    /*    left:50%;*/
+    /*    transform: translate(-50%,-50%);*/
+    /*    border-radius: 15px;*/
+    /*}*/
+
+    /*.joinForm h2 {*/
+    /*    text-align: center;*/
+    /*    margin: 30px;*/
+    /*}*/
+
+    /*.textForm {*/
+    /*    border-bottom: 2px solid #adadad;*/
+    /*    margin: 30px;*/
+    /*    padding: 10px 10px;*/
+    /*}*/
+
+
+    /*.id {*/
+    /*    width: 100%;*/
+    /*    border:none;*/
+    /*    outline:none;*/
+    /*    color: #636e72;*/
+    /*    font-size:16px;*/
+    /*    height:25px;*/
+    /*    background: none;*/
+    /*}*/
+
+    /*.pw {*/
+    /*    width: 100%;*/
+    /*    border:none;*/
+    /*    outline:none;*/
+    /*    color: #636e72;*/
+    /*    font-size:16px;*/
+    /*    height:25px;*/
+    /*    background: none;*/
+    /*}*/
+
+    /*.name {*/
+    /*    width: 100%;*/
+    /*    border:none;*/
+    /*    outline:none;*/
+    /*    color: #636e72;*/
+    /*    font-size:16px;*/
+    /*    height:25px;*/
+    /*    background: none;*/
+    /*}*/
+
+    /*.email {*/
+    /*    width: 100%;*/
+    /*    border:none;*/
+    /*    outline:none;*/
+    /*    color: #636e72;*/
+    /*    font-size:16px;*/
+    /*    height:25px;*/
+    /*    background: none;*/
+    /*}*/
+
+    /*.nickname {*/
+    /*    width: 100%;*/
+    /*    border:none;*/
+    /*    outline:none;*/
+    /*    color: #636e72;*/
+    /*    font-size:16px;*/
+    /*    height:25px;*/
+    /*    background: none;*/
+    /*}*/
+
+    /*.cellphoneNo {*/
+    /*    width: 100%;*/
+    /*    border:none;*/
+    /*    outline:none;*/
+    /*    color: #636e72;*/
+    /*    font-size:16px;*/
+    /*    height:25px;*/
+    /*    background: none;*/
+    /*}*/
+
+    /*.btn {*/
+    /*    position:relative;*/
+    /*    left:40%;*/
+    /*    transform: translateX(-50%);*/
+    /*    margin-bottom: 40px;*/
+    /*    width:80%;*/
+    /*    height:40px;*/
+    /*    background: linear-gradient(125deg,#81ecec,#e2130c,#81ecec);*/
+    /*    background-position: left;*/
+    /*    background-size: 200%;*/
+    /*    color:white;*/
+    /*    font-weight: bold;*/
+    /*    border:none;*/
+    /*    cursor:pointer;*/
+    /*    transition: 0.4s;*/
+    /*    display:inline;*/
+    /*}*/
+
+    /*.btn:hover {*/
+    /*    background-position: right;*/
+    /*}*/
+
+    /*p {*/
+    /*    font-size: 0.75rem;*/
+    /*}*/
+</style>
+</head>
+<body>
+<div class="joinForm input-form">
+    <h2>회원가입</h2>
+    <form action="/member/save" method="post">
+    <div class="textForm">
+        <input name="memberEmail" type="text" id="username" class="id" placeholder="이메일" onclick="emailcheck()">
+        <p id = "checkResult"></p>
+    </div>
+    <div class="textForm">
+        <input name="memberPassword" type="password" id="pw1" class="pw" placeholder="비밀번호"></i>
+        <p id = "pw-check"></p>
+    </div>
+    <div class="textForm">
+        <input type="password" id="pw2" class="pw" placeholder="비밀번호 확인"></i></id>
+        <p id ="pw-check-result"></p>
+    </div>
+    <div class="textForm">
+        <input name="memberName" type="text" id="name" class="name" placeholder="이름">
+        <p id="name-check"></p>
+    </div>
+    <div class="textForm">
+        <input name="memberAge" type="text" id="memberAge" class="email" placeholder="나이">
+        <p id="age-result"></p>
+    </div>
+    <div class="textForm">
+        <input name="memberPhone" type="text" id="memberPhone" class="cellphoneNo" placeholder="전화번호">
+        <p id="mobile-result"></p>
+    </div>
+
+    <input type="submit"  class="btn" value="J O I N"/>
+    </form>
+</div>
+
+
+
+</body>
+<script>
+    function usernameCheck(check){
+        const input_usernaem=document.getElementById("username").value;
+        const result_username=document.getElementById("checkResult");
+        const exp= /^[a-z\d-_]{10,15}$/;
+        if (input_usernaem.match(exp)) {
+            result_username.style.display = "none";
+            result_username.setAttribute("aria-hidden", true);
+            check = true;
+        } else {
+            result_username.innerHTML = "10~15자의 영문 소문자, 숫자와 특수기호(_), (-)만 사용 가능합니다.";
+            result_username.style.color = "#aa3636";
+            result_username.style.display = "block";
+            result_username.setAttribute("aria-hidden", false);
+            check = false;
+        }
+        return check;
+    }
+    function pwcheck(check){
+        const input_pw1=document.getElementById("pw1").value;
+        const result_pw=document.getElementById("pw-check");
+        const exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{10,20}$/;
+        if(!input_pw1.match(exp)){
+            result_pw.innerHTML = "10자~20자의 영문 대 소문자, 숫자, 특수문자(!@#$%^&*)를 사용하세요.";
+            result_pw.style.color = "#aa3636";
+            result_pw.style.display = "block";
+            result_pw.setAttribute("aria-hidden", false);
+            check = false;
+        } else {
+            result_pw.style.display = "none";
+            result_pw.setAttribute("aria-hidden", true);
+            check = true;
+        }
+        return check;
+    }
+    function pwcheckAgain(check){
+        const input_pw1 = document.getElementById("pw1").value;
+        const check_pw2 = document.getElementById("pw2").value;
+        const result_pw = document.getElementById("pw-check-result");
+        if(check_pw2 == input_pw1){
+            if(input_pw1 == '' || check_pw2 == ''){
+                result_pw.innerHTML ="비밀번호를 입력하세요.";
+                result_pw.style.color = "#aa3636";
+                check = false;
+            } else{
+                result_pw.innerHTML ="비밀번호가 일치합니다.";
+                result_pw.style.color = "#36aa36";
+                check = true;
+            }
+        }else{
+            result_pw.innerHTML = "비밀번호가 일치하지 않습니다.";
+            result_pw.style.color = "#aa3636";
+            check = false;
+        }
+        return check;
+    }
+
+    function namecheck(check){
+        const input_name = document.getElementById("name").value;
+        const result_name = document.getElementById("name-check");
+        const exp = /^[a-zA-Z가-힣]{2,20}$/;
+
+        if(!input_name.match(exp)){
+            result_name.innerHTML = "한글과 영문 대 소문자를 사용하세요.";
+            result_name.style.color = "#aa3636";
+            result_name.style.display ="white";
+            result_name.setAttribute("aria-hidden", false);
+            check =false;
+        }else{
+            result_name.style.display ="none";
+            result_name.setAttribute("aria-hidden", true);
+            check = true;
+        }
+        return check;
+    }
+    function emailcheck(check){
+        const input_email = document.getElementById("email").value;
+        const result_email = document.getElementById("email-result");
+        const exp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
+        if (input_email.match(exp)) {
+            result_email.style.display = "none";
+            result_email.setAttribute("aria-hidden", true);
+            check = true;
+        } else {
+            result_email.innerHTML = "이메일 주소를 다시 확인해주세요.";
+            result_email.style.color = "#aa3636";
+            result_email.style.display = "block";
+            result_email.setAttribute("aria-hidden", false);
+            check = false;
+        }
+        return check;
+    }
+    function mobileCheck(check){
+        const input_mobile = document.getElementById("mobile").value;
+        const result_mobile = document.getElementById("mobile-result");
+        const exp = /^01[0179][0-9]{7,8}$/;
+
+        if (!input_mobile.match(exp)) {
+            result_mobile.innerHTML = "휴대전화번호를 다시 확인해주세요.";
+            result_mobile.style.color = "#aa3636";
+            result_mobile.style.display = "block";
+            result_mobile.setAttribute("aria-hidden", false);
+            check = false;
+        } else {
+            result_mobile.style.display = "none";
+            result_mobile.setAttribute("aria-hidden", true);
+            check = true;
+        }
+        return check;
+    }
+    function signup(){
+        const input_usernaem = document.getElementById("name").value;
+        const result_username = document.getElementById("checkResult");
+
+        const input_pw1 = document.getElementById("pw1");
+        const result_pw = document.getElementById("pw-check");
+
+        const check_pw = document.getElementById("pw2");
+        const result_check_pw = document.getElementById("pw-check-result");
+
+        const input_name = document.getElementById("name");
+        const result_name = document.getElementById("name-check");
+
+        const input_email = document.getElementById("email")
+        const result_email = document.getElementById("email-result")
+
+        const input_mobile = document.getElementById("mobile")
+        const result_mobile = document.getElementById("mobile-result")
+
+        let check = true;
+
+        check = usernameCheck(check);
+        check = pwcheck(check);
+        check = pwcheckAgain(check);
+        check = namecheck(check);
+        check = emailcheck(check);
+        check = mobileCheck(check);
+
+        if (input_usernaem == '') {
+            result_username.innerHTML = "필수 입력 항목입니다.";
+            result_username.style.color = "#aa3636";
+            check = false;
+        }
+        if (input_pw1 == '') {
+            result_pw.innerHTML = "필수 입력 항목입니다.";
+            result_pw.style.color = "#aa3636";
+            check = false;
+        }
+        if (check_pw == '') {
+            result_check_pw.innerHTML = "필수 입력 항목입니다.";
+            result_check_pw.style.color = "#aa3636";
+            check = false;
+        }
+        if (input_name == '') {
+            result_name.innerHTML = "필수 입력 항목입니다.";
+            result_name.style.color = "#aa3636";
+            check = false;
+        }
+        if (input_email == '') {
+            result_email.innerHTML = "필수 입력 항목입니다.";
+            result_email.style.color = "#aa3636";
+            check = false;
+        }
+        if (input_mobile == '') {
+            result_mobile.innerHTML = "필수 입력 항목입니다.";
+            result_mobile.style.color = "#aa3636";
+            check = false;
+        }
+
+        if(check){
+            console.log("ㅎㅇ");
+        }else{
+            console.log("ㅂㅇ");
+        }
+    }
+</script>

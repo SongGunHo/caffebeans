@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>detail</h2>
+    <tr>
+        <th>글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>내용</th>
+        <th>작성시간</th>
+    </tr>
+    <tr>
+        <td th:text="${byId.id}"></td>
+        <td><a href="@{|/board/update-form/byId.id|}" th:text="${byId.boardTitle}"></a></td>
+        <td th:text="${byId.boardWriter}"></td>
+        <td th:text="${byId.boardContents}"></td>
+    </tr>
+    <a th:href="@{|board/update-form/${session.login.id}|}">수정</a>
+</body>
+</html>

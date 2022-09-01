@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>detail2.html</h2>
+<tr>
+    <th>상품가격</th><br>
+    <th>구매혜택</th><br>
+    <th>제조사</th><br>
+    <th>용량</th><br>
+    <th>옵션</th><br>
+</tr>
+<tr>
+    <td th:text="${byId.id}" hidden></td>
+    <td><a th:href="@{|/coffee/update-form/byId.id|}" th:text="${byId.coffeePrice}"></a></td>
+    <td th:text="${byId.coffeeBenefits}"></td>
+    <td th:text="${byId.coffeeCompany}"></td>
+    <td th:text="${byId.coffeeVolume}"></td>
+    <td th:text="${byId.coffeeOption}"></td>
+    <td><img th:src="@{|/upload/${byId.coffeeFileName}|}" width="100" height="100" alt=""><br>
+    </td><br>
+    <input type="text" id="reset" name="select" onblur="count()">
+    <select id="reset1" name="select" onchange="here()">
+        <option value="선택">선택</option>
+        <option value="200g">200g</option>
+        <option value="400g">400g</option>
+        <option value="1kg">1Kg</option>
+    </select><br>
+    <input type="text" id="md" name="der" onblur="sp()">
+    <select id="md1" name="yb"  onchange="menu()">
+        <option value="추가옵션">추가옵션</option>
+        <option value="홀빈">홀빈</option>
+        <option value="프랜치프랜스 분쇄">프랜치프렌스 분쇄</option>
+        <option value="커피메이커">커피메이커 분쇄</option>
+        <option value="더치용 분쇄">더치용 분쇄</option>
+    </select><br>
+    <div>
+        <input class=width="30Px" type="text" id="count" value="10">
+        <button onclick="red()">+</button>
+        <button onclick="result()">-</button>
+    </div>
+    <div class="button_set">
+        <a href="btn-cart">장바구니</a>
+        <a href="btn-buy">결제</a>
+    </div>
+</body>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>수정</h2>
+    <form action="/board/update" method="post">
+        <input type="text" id="id" th:value="${board.id}"hidden>
+        <input type="text" name="boardTitle" readonly><br>
+        <input type="text" name="boardWriter" readonly><br>
+        <textarea name="boardContents" placeholder="내용"></textarea><br>
+        <input type="file" name="boardFile" placeholder="첨부파일"><br>
+        <input type="submit" value="수정"><br>
+    </form>
+</body>
+</html>

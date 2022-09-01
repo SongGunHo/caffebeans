@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>마이페이지</h2>
+<!--    <form action="/member/myPages" method="post">-->
+<!--        <a href="/member/update-form">내정보 수정</a>-->
+
+    <!--    <button onclick="memberUpdate()">수정22</button>-->
+    <a th:href="@{|/member/detail/${session.login.id}|}">정보</a>
+
+<!--     @PathVariable 방식 -->
+<!--    <a th:href="@{|/member/update-form/${session.login.id}|}">수정22</a>-->
+        <a href="/board/save-form">게시글 작성</a>
+    <a href="/board/list">목록</a>
+<!--    </form>-->
+</body>
+<script th:inline="javascript">
+    // @RequestParam 방법
+    // const memberUpdate = () => {
+    //     const id = [[${session.id}]];
+    //     location.href = "/member/update-form?id=" + id;
+    // }
+</script>
+</html>

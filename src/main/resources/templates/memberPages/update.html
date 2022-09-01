@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>수정화면</h2>
+<form action="/member/update" method="post">
+    <input type="hidden" id="id" th:value="${member.id}">
+    이메일: <input type="text" name="memberEmail" onclick="emailResult()">
+            <p id="idCheck"></p>
+    <br>
+    비밀번호: <input type="Password" name="memberPassword" readonly>
+    <br>
+    이름: <input type="text" name="memberName">
+    <br>
+    나이: <input type="text" name="memberAge">
+    <br>
+    전화번호: <input type="text" name="memberPhone">
+    <br>
+    <input type="submit" value="수정">
+
+</form>
+</body>
+
+</html>

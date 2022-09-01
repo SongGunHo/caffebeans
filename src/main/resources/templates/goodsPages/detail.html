@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>상품상세조회</h2>
+  <tr>
+        <th>정가</th><br>
+        <th>구매해택</th><br>
+        <th>브랜드</th><br>
+        <th>제조사</th><br>
+        <th>원산지</th><br>
+        <th>사이즈</th><br>
+        <th>재질</th><br>
+    </tr>
+    <tr>
+        <td><a th:href="@{|/goods/update-form/byId.id|}" th:text="${byId.goodsPrice}"></a></td>
+        <td th:text="${byId.goodsBenefits}"></td>
+        <td th:text="${byId.goodsBrand}"></td>
+        <td th:text="${byId.goodsCompany}"></td>
+        <td th:text="${byId.goodsOrigin}"></td>
+        <td th:text="${byId.goodsSize}"></td>
+        <td th:text="${byId.goodsTexture}"></td>
+        <td><img th:src="@{|/upload/${byId.goodsFileName}|}" width="100" height="100" alt=""></td>
+        <td><img th:src="@{|/upload/${byId.goodsFileName}|}" width="100" height="100" alt=""></td>
+        <td th:text="${byId.goodsFile}">
+        </td><br>
+    </tr>
+            <input id="reset" value="10"></input><br>
+            <button onclick="count()">+</button>
+            <button onclick="red()">-</button>
+  <input type="submit" value="주문하기">
+
+</body>
+<script>
+    function count(){
+        let file = document.getElementById("reset").value;
+        file++;
+        document.getElementById("reset").value=file;
+    }
+    function red(){
+        let file=document.getElementById("reset").value;
+        file--;
+        document.getElementById("reset").value =file;
+    }
+</script>
+</html>

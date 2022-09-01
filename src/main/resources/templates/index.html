@@ -1,12 +1,634 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-    <h2>Home.html</h2>
-    <a href="/member/save">회원가입</a>
-    <a href="/member/login ">로그인</a>
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+
+<!--    // function bbbb() {-->
+<!--    //     let num = document.getElementById("sp").value;-->
+<!--    //     num&#45;&#45;;-->
+<!--    //     document.getElementById("sp").value =num;-->
+<!--    // }-->
+<!--    //     function aaaa(){-->
+<!--    //     let num = document.getElementById("sp").value;-->
+<!--    //         num++;-->
+<!--    //         document.getElementById("sp").value =num;-->
+
+
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<body id="body-pd">
+<div class="l-navbar" id="navbar">
+    <nav class="nav">
+        <div>
+            <div class="nav__brand">
+                <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                <a href="#" class="nav__logo">메뉴</a>
+            </div>
+
+            <div href="#" class="nav__link collapse">
+                <ion-icon name="leaf-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">원두</span>
+
+                <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+                <ul class="collapse__menu">
+                    <a href="file:///C:/Users/user/Desktop/설정파일/coffee" class="collapse__sublink">케냐AA</a>
+                    <a href="/coffeePages/detail" class="collapse__sublink" >과테말라 안티구아</a>
+                </ul>
+            </div>
+
+            <div href="#" class="nav__link collapse">
+                <ion-icon name="cafe-outline" class="nav__icon"></ion-icon>
+                <span class="nav_name">상품</span>
+
+                <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
+
+                <ul class="collapse__menu">
+                    <a href="#" class="collapse__sublink">원두1</a>
+                    <a href="#" class="collapse__sublink">원두2</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+    <div class="header">
+        <div class="header_content">
+            <div class="content">
+                <h1>
+                    <img th:src="@{img/원두를 가는사람.jpg}" alt="BJY"></img>
+                    <span>coffee</span>
+                </h1>
+
+                <li>
+                    <a href="/member/login-form">
+                        <span>로그인</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/member/save-form">
+                        <span>회원가입</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>고객센터</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+
+    <div class="contents" style="margin: 20px 50px 5px 150px;" >
+        <div class="w3-content w3-section" style="size: auto;">
+            <img class="mySlides" th:src="@{img/1660614493241.jpg}" style="width: 95%">
+            </div>
+        <div>
+            <img class="mySlides" th:src="@{img/과테말라 원두 포스터.jpg}" style="width: 95%">
+        </div>
+    </div>
+
+    <div class="container">
+        <span></span>
+        <em>원두</em>
+    </div>
+
+    <div class="item_wrap">
+        <div class="dump">
+            <img th:src="@{img/케냐2.jpg}"
+                 width="260" alt="MCC 에티오피아 구지 우라가 무다 타테사 G1 내추럴" title="MCC 에티오피아 구지 우라가 무다 타테사 G1 내추럴" class="middle">
+
+            <div class="info">
+                <a href="../goods/goods_view.php?goodsNo=1000000830&amp;mtn=13%5E%7C%5ENEW+PRODUCT%5E%7C%5En"></a>
+                </div>
+                <div class="item_tit_box">
+                    <strong class="item_name">케냐 AA 원두</strong>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="item_money_box">
+            <strong class="item_price">
+                <span> 10,300 </span>
+            </strong>
+        </div>
+        <div class="item_md">
+        <img src="https://cdn-pro-web-216-165-godomall.spdycdn.net/xnshtr1333_godomall_com/data/icon/goods_icon/NEW.jpg" alt="신상품" title="신상품" class="middle">
+        </div>
+</div>
+
+    <div class="dump2">
+        <img th:src="@{img/과테말라.jpg}"
+             width="260" alt="SHB 안티구아나" title="SHB 안티구아나" class="middle">
+
+        <div class="info">
+            <a href="../goods/goods_view.php?goodsNo=1000000830&amp;mtn=13%5E%7C%5ENEW+PRODUCT%5E%7C%5En"></a>
+            <div class="item_tit_box">
+                <strong class="item_name">과테말라 SHB 안티구아</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="item_money_box">
+        <strong class="item_price">
+        <span style> 10,300 </span>
+        </strong>
+    </div>
+    <div class="item_md">
+    <img src="https://cdn-pro-web-216-165-godomall.spdycdn.net/xnshtr1333_godomall_com/data/icon/goods_icon/NEW.jpg" alt="신상품" title="신상품" class="middle">
+    </div>
+
+
+
+<!--    <input id="sp" value=1></input>-->
+<!--    <input id="here" value="여기"></input>-->
+<!--    <button onclick="aaaa()">더하기</button>-->
+<!--    <button onclick="bbbb()">빼기</button>-->
+<!--    <button onclick="ccc()">나누기/button>-->
+
 </body>
+<!-- IONICONS -->
+<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+<!-- JS -->
+<script src="assets/js/main.js"></script>
+<style>
+    /* VARIABLES CSS */
+    :root {
+        --nav--width: 92px;
+
+        /* Colores */
+        --first-color: #222;
+        --bg-color: #12192c;
+        --sub-color: #b6cefc;
+        --white-color: #fff;
+
+        /* Fuente y tipografia */
+        --body-font: 'Poppins', sans-serif;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+
+        /* z index */
+        --z-fixed: 100;
+    }
+
+    /* BASE */
+    *, ::before, ::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative;
+        margin-left: 80px;
+        padding: 2rem 0 0 6.75rem;
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+        transition: .5s;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* l NAV */
+    .l-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: var(--nav--width);
+        height: 100vh;
+        background-color: rgb(49, 151, 247);
+        color: var(--white-color);
+        padding: 1.5rem 1.5rem 2rem;
+        transition: .5s;
+        z-index: var(--z-fixed);
+    }
+
+    /* NAV */
+    .nav {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    .nav__brand {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .nav__toggle {
+        font-size: 1.25rem;
+        padding: .75rem;
+        cursor: pointer;
+    }
+
+    .nav__logo {
+        color: var(--white-color);
+        font-weight: 600;
+    }
+
+    .nav__link {
+        display: grid;
+        grid-template-columns: auto;
+
+        align-items: center;
+        column-gap: .75rem;
+        padding: .75rem;
+        color: var(--white-color);
+        border-radius: .5rem;
+        margin-bottom: 1rem;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    .nav__link:hover {
+        background-color: var(--first-color);
+    }
+
+    .nav__icon {
+        font-size: 1.25rem;
+    }
+
+    .nav_name {
+        font-size: var(--small-font-size);
+    }
+
+    /* Expander menu */
+    .expander {
+        width: calc(var(--nav--width) + 9.25rem);
+    }
+
+    /* Add padding body*/
+    .body-pd {
+        padding: 2rem 0 0 16rem;
+    }
+
+    /* Active links menu */
+    .active {
+        background-color: var(--first-color);
+    }
+
+    /* COLLAPSE */
+    .collapse {
+        grid-template-columns: 20px max-content 1fr;
+    }
+
+    .collapse__link {
+        justify-self: flex-end;
+        transition: 0.5s;
+    }
+
+    .collapse__menu {
+        width: 200px;
+        display: none;
+        padding: .75rem 2.25rem;
+
+    }
+
+    .collapse__sublink {
+        color: var(--sub-color);
+        font-size: 10px;
+        writing-mode: horizontal-tb;
+
+
+    }
+
+    .collapse__sublink:hover {
+        color: var(--white-color);
+    }
+
+    /* Show collapse */
+    .showCollapse {
+        display: block;
+
+    }
+
+    /* Rotate icon */
+    .rotate {
+        transform: rotate(180deg);
+        transition: .5s;
+    }
+</style>
+
+<script>
+    const showMenu = (toggleId, navbarId, bodyId) => {
+        const toggle = document.getElementById(toggleId),
+            navbar = document.getElementById(navbarId),
+            bodypadding = document.getElementById(bodyId)
+
+        if( toggle && navbar ) {
+            toggle.addEventListener('click', ()=>{
+                navbar.classList.toggle('expander');
+
+                bodypadding.classList.toggle('body-pd')
+            })
+        }
+    }
+
+    showMenu('nav-toggle', 'navbar', 'body-pd')
+
+    /* LINK ACTIVE */
+    const linkColor = document.querySelectorAll('.nav__link')
+    function colorLink() {
+        linkColor.forEach(l=> l.classList.remove('active'))
+        this.classList.add('active')
+    }
+    linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+    /* COLLAPSE MENU */
+    const linkCollapse = document.getElementsByClassName('collapse__link')
+    var i
+
+    for(i=0;i<linkCollapse.length;i++) {
+        linkCollapse[i].addEventListener('click', function(){
+            const collapseMenu = this.nextElementSibling
+            collapseMenu.classList.toggle('showCollapse')
+
+            const rotate = collapseMenu.previousElementSibling
+            rotate.classList.toggle('rotate')
+        });
+    }
+</script>
+
+<style>
+    #menu > ul > li {
+        float:left;
+        width:140px;
+        position:relative;
+        z-index: 8;
+    }
+    #menu > ul > li > ul {
+        width:130px;
+        display:none;
+        position: absolute;
+        font-size:14px;
+        background: #fff;
+    }
+    #menu > ul > li:hover > ul {
+        display:block;
+
+    }
+    #menu > ul > li > ul > li:hover {
+        background: #eee;
+        transition: ease 1s;
+    }
+
+    /*헤더 부분 css*/
+    .header .content{
+
+        margin:auto;
+    }
+    .header{position:static; height:101px; }
+    .header_content{
+        margin-bottom: 50px;
+        background-color: #fff;
+
+    }
+    .header_content .content{display: flex;
+        justify-content: space-between;
+        padding: 20px 6px 20px 0px;
+        background-color: #fff;
+        position: relative;
+    }
+    .header_content .content h1{
+        display: block;
+        float: left;
+        height: 50%;
+    }
+    .header_content .content h1 img{
+        display: block;
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+
+    }
+    .header_content .content h1 span{
+        font-weight: 300;
+        font-size: 16px;
+        color: #222;
+        letter-spacing: 0.313em;
+        line-height: 1.500em;
+    }
+    .header_content .content h1{
+        display: inline-flex;
+        align-items: flex-end;
+        height: 53px;
+    }
+    .header_content .content li {
+        display: flex;
+        align-items: center;
+    }
+    .header_content .content li{
+        margin-left: 44px;
+        margin-top: 2px;
+    }
+    .header_content .content li img{
+        width: 36px;
+        height: 36px;
+    }
+    .header_content .content li a span{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        font-size: 13px;
+        color: #666;
+        line-height: 1.462em;
+        white-space: nowrap;
+        transform: translate(-50%, 0);
+    }
+    .header_content .content li{
+        margin-left: 44px;
+        margin-top: 2px;
+    }
+
+    .header_content .content li{
+        margin-left: 44px;
+        margin-top: 2px;
+    }
+    .header_content .content  li img{
+        width: 36px;
+        height: 36px;
+    }
+    .header_content .content  li a span{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        font-size: 13px;
+        color: #666;
+        line-height: 1.462em;
+        white-space: nowrap;
+        transform: translate(-50%, 0);
+    }
+    .header_content .content  li{
+        margin-left: 44px;
+        margin-top: 2px;
+    }
+    .header_content .content  li img{
+        width: 36px;
+        height: 36px;
+    }
+    .header_content .content li a span{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        font-size: 13px;
+        color: #666;
+        line-height: 1.462em;
+        white-space: nowrap;
+        transform: translate(-50%, 0);
+    }
+    .header_content .content li{
+        margin-left: 44px;
+        margin-top: 2px;
+    }
+    .header_content .content li a{
+        display: block;
+        position: relative;
+        padding-bottom: 19px;
+    }
+    .header_content .content li img{
+        width: 36px;
+        height: 36px;
+    }
+    .header_content .content li a span{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        font-size: 13px;
+        color: #666;
+        line-height: 1.462em;
+        white-space: nowrap;
+        transform: translate(-50%, 0);
+    }
+
+</style>
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+</script>
+<style>
+    .contents{
+
+        margin-left: 521px;
+        top: 10%;
+        width:900px;
+        height: 500px;
+
+    }
+
+    .mySlides{
+        text-align: right;
+    }
+</style>
+
+<style>
+    .shop{
+        padding: 3.2em 0 1em;
+        font-size: 30px;
+    }
+    .shop em {
+        margin: 0 auto;
+        line-height: inherit;
+        height: inherit;
+        font-size: inherit;
+        font-weight: 500;
+        letter-spacing: 0;
+        color: #333;
+        width: 100%;
+    }
+</style>
+
+<style>
+    .dump{
+        position: relative;
+        margin-left: 10px;
+        padding: 2rem 0 0 25.75rem;
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+        transition: .5s;
+    }
+    }
+    .item_name {
+        margin-left: 78px;
+        font-size: 15px;
+
+    }
+</style>
+
+<style>
+    .item_money_box strong {
+        margin-left: 523px;
+        font-size: 14px;
+
+    }
+    .item_md{
+        text-align: center;
+    }
+
+</style>
+
+<style>
+    .dump2{
+        position: relative;
+        margin-left: 80px;
+        padding: 2rem 0 0 21.75rem;
+        font-family: var(--body-font);
+        font-size: var(--normal-font-size);
+        transition: .5s;
+    }
+
+    .item_name {
+        margin-left: 60px;
+        font-size: 15px;
+    }
+</style>
+
+<style>
+    .item_money_box strong {
+        text-align: center;
+        font-size: 14px;
+
+    }
+    .container{
+        margin-left: 523px;
+        font-size: 30px;
+
+    }
+    .item_md{
+        text-align: center;
+    }
+</style>
+
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+  <h2>list</h2>
+  <table>
+    <tr>
+        <th>판매가</th>
+
+    </tr>
+    <tr th:each="h:${all}">
+        <td th:text="${h.id}"></td>
+        <!--   <td><a th:href="@{|/coffee/${j.id}|}" th:text="${j.coffeeName}"></a></td> -->
+      <td><a th:href="@{|/coffee/detail/${h.id}|}" th:text="${h.coffeePrice}"></a></td>
+
+    </tr>
+  </table>
+</body>
+</html>

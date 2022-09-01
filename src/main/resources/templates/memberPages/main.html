@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>메인</h2>
+  <a href="/menu/save-form">메뉴</a>
+  <a href="/member/myPages-form">마이페이지</a>
+  <p th:if="${session.login.memberEmail == 'admin'}">
+      <a href="/member/admin-form">관리자</a>
+  </p>
+  <a href="/member/logout">로그아웃</a>
+</body>
+</html>

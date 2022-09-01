@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>장바구니</h2>
+    <th>상품가격</th><br>
+    <th>구매혜택</th><br>
+    <th>제조사</th><br>
+    <th>용량</th><br>
+    <th>옵션</th><br>
+    if(cart.size()==0){
+    <tr align="center">
+        <td colspan="5">
+            장바구니에 상품이 없습니다
+            <a th:href="@{../../coffee/detail}">주문</a>
+        </td>
+    </tr>
+    } else {
+    int totalSum = 0, total = 0;
+    DecimalFormat df = new DecimalFormat("￦#,##0");
+    for(int i = 0; i < cart.size(); i++) {
+    CartDTO dto = cart.get(i);
+
+</body>
+</html>
