@@ -27,6 +27,7 @@ public class BoardDTO {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="member_id")
     private MemberEntity memberEntity;
+
     public static BoardDTO toBoardDTO(BoardEntity boardEntity) {
         BoardDTO boardDTO = new BoardDTO();
         boardDTO.setId(boardEntity.getBoardId());
